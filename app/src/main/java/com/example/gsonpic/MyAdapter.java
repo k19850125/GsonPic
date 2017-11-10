@@ -48,8 +48,8 @@ public class MyAdapter extends BaseAdapter {
             holder.textView = (TextView) convertView.findViewById(R.id.textView);
             holder.imageView = (ImageView) convertView.findViewById(R.id.imageView);
             convertView.setTag(holder);
-        }else {
-            holder = (ViewHolder)convertView.getTag();
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
         holder.textView.setText(zooInfo[position].E_Name);

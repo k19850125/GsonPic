@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lv = (ListView)findViewById(R.id.listView);
-//        final ImageView imgView = (ImageView) findViewById(R.id.imageView);
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         StringRequest stringRequest = new StringRequest("http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=5a0e5fbb-72f8-41c6-908e-2fb25eff9b8a",
                 new Response.Listener<String>() {
@@ -33,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
                         Zoo z = gson.fromJson(response, Zoo.class);
                         adapter = new MyAdapter(MainActivity.this,z.result.results);
                         lv.setAdapter(adapter);
-//                        Picasso.with(MainActivity.this).load(z.result.results[5].E_Pic_URL).into(imgView);
                         Log.d("ZooPic", z.result.results[5].E_Pic_URL);
                     }
                 }, new Response.ErrorListener() {
